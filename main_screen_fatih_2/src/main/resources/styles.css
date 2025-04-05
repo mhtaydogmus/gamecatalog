@@ -1,0 +1,84 @@
+#top_label {
+    -fx-padding: 20;
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: black;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, gray, 5, 0.0, 0, 2); 
+}
+
+#bottom_shadow {
+    -fx-pref-height: 2px;
+    -fx-background-color: black;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 5);
+}
+
+#top_mid Label {
+    -fx-font-size: 32;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 0 30;
+}
+
+#top_left {
+    -fx-alignment: center-left;
+    -fx-pref-width: 150px;
+}
+
+#top_mid {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 0;
+    -fx-alignment: center;
+    -fx-max-width: 600px;
+}
+
+#top_right {
+    -fx-alignment: center-right;
+    -fx-padding: 5px 10px;
+    -fx-pref-width: 220px;
+}
+
+#top_right TextField {
+    -fx-pref-width: 150;
+    -fx-alignment: center-left;
+}
+
+#top_right Button {
+    -fx-spacing: 10;
+}
+
+#top_label {
+    -fx-padding: 20;
+    -fx-margin-top: 50;
+}
+/* Dropdown menu */
+#dropdown_menu {
+    -fx-background-color: #c75656;
+    -fx-text-fill: white;
+    -fx-padding: 5px 10px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: transparent;
+    -fx-alignment: center;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 30px;
+    -fx-alignment: center-left;
+}
+
+
+#dropdown_menu .arrow {
+    -fx-background-color: #c75656;
+    -fx-shape: "M0,0 L5,5 L10,0";
+    -fx-fill: white;
+    -fx-border-radius: 50%;
+    -fx-margin-right:10px;
+}
+
+
+#dropdown_menu .arrow-button {
+    -fx-background-color: white;
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+    -fx-border-color: #c75656;
+}
