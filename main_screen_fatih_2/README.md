@@ -1,7 +1,0 @@
-"# gamecatalog" 
-"# gamecatalog_main_screen" 
-"# gamecatalog_main_screen" 
-"# gamecatalog_main_screen" 
-"# gamecatalog_main_screen" 
-"# gamecatalog_main_screen" 
-"# gamecatalog" 
