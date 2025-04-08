@@ -14,7 +14,7 @@ repositories {
 }
 
 ext {
-    junitVersion = '5.9.2'
+    junitVersion = '5.10.2'
 }
 
 sourceCompatibility = '9'
@@ -26,7 +26,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'com.example.main_screen'
-    mainClass = 'com.example.main_screen.HelloApplication'
+    mainClass = 'com.example.main_screen.GameCatalogApp'
 }
 
 javafx {

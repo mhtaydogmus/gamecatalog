@@ -29,7 +29,7 @@
 
 
 <VBox alignment="TOP_CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.main_screen.HelloController" id="top_label">
+      fx:controller="com.example.main_screen.GameCatalogApp" id="top_label">
     <padding>
         <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
     </padding>

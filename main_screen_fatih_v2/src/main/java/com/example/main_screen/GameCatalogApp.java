@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -44,7 +45,7 @@ public class GameCatalogApp extends Application {
         VBox leftBox = new VBox(10);
         leftBox.setId("top_left");
         leftBox.setAlignment(Pos.CENTER_LEFT);
-        ImageView logoImage = new ImageView(new Image("/img/test.jpg"));
+        ImageView logoImage = new ImageView(new Image("file:/img/test.jpg"));
         logoImage.setFitWidth(100);
         logoImage.setFitHeight(100);
         leftBox.getChildren().add(logoImage);
@@ -116,8 +117,9 @@ public class GameCatalogApp extends Application {
 
         // load and display games
         GameLoader gameLoader = new GameLoader();
-        allGames = gameLoader.loadGames("json/games.json");
+        allGames = gameLoader.loadGames("/json/games.json");
         displayGames(allGames);
+
 
         // real time search filter
         searchBox.textProperty().addListener((observable, oldValue, newValue) -> {

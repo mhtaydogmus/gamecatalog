@@ -12,11 +12,10 @@ public class GameLoader {
     public static List<Game> loadGames(String filePath) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            return objectMapper.readValue(GameLoader.class.getClassLoader().getResourceAsStream(filePath), new TypeReference<List<Game>>(){});
+            return objectMapper.readValue(GameLoader.class.getResourceAsStream(filePath), new TypeReference<List<Game>>(){});
         } catch (IOException e) {
             e.printStackTrace();
             return Collections.emptyList();
         }
     }
 }
-
