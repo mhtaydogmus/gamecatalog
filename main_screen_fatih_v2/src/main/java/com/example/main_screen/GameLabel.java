@@ -5,8 +5,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.paint.Color;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -14,30 +12,39 @@ public class GameLabel {
 
     private Game game;
 
-
     public GameLabel(Game game) {
         this.game = game;
     }
 
     public VBox createItem() {
         VBox itemBox = new VBox(10);
-        itemBox.setStyle("");
 
-        // game img
-        ImageView gameImageView = new ImageView(new Image(getClass().getResource(game.getImage()).toString()));
-        gameImageView.setFitWidth(150);
-        gameImageView.setFitHeight(225);
+        // --- LOAD IMAGE ---
+        String imgSource = game.getImage();
+        // imgSource should be something like "file:/…/game_images/uuid-filename.jpg"
+        Image cover;
+        if (imgSource.startsWith("file:") || imgSource.startsWith("http")) {
+            // user-provided / external image
+            cover = new Image(imgSource, 150, 225, true, true);
+        } else {
+            // packaged resource fallback (e.g. "/img/default.png")
+            cover = new Image(
+                    getClass().getResource(imgSource).toExternalForm(),
+                    150, 225, true, true
+            );
+        }
 
-        // btn for redirect
+        ImageView gameImageView = new ImageView(cover);
+
+        // --- BUTTON WRAPPING THE IMAGE ---
         Button button = new Button();
         button.setGraphic(gameImageView);
-        button.setOnAction(event -> openGamePage());
+        button.setOnAction(e -> openGamePage());
 
-        // game title
+        // --- TITLE & DESCRIPTION ---
         Label gameTitle = new Label(game.getTitle());
         gameTitle.setStyle("-fx-font-weight: bold; -fx-font-size: 14px;");
 
-        //description
         String tagsDescription = game.getDescription(game.getTags());
         Label gameDescription = new Label(tagsDescription);
         gameDescription.setStyle("-fx-font-size: 12px; -fx-text-fill: grey;");
@@ -45,36 +52,38 @@ public class GameLabel {
         gameDescription.setWrapText(true);
         gameDescription.setMaxHeight(60);
 
-        // add to vbox
         itemBox.getChildren().addAll(button, gameTitle, gameDescription);
-
         return itemBox;
     }
-    private void openGamePage() {
-        // create new window
-        Stage newStage = new Stage();
 
-        // create a new scene
-        VBox newPageLayout = new VBox(20);
+    private void openGamePage() {
+        Stage newStage = new Stage();
+        VBox layout = new VBox(20);
+
         Label titleLabel = new Label("Title: " + game.getTitle());
         titleLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 18px;");
 
         String tagsDescription = game.getDescription(game.getTags());
-        Label gameDescription = new Label(tagsDescription);
-        gameDescription.setStyle("-fx-font-size: 14px; -fx-text-fill: grey;");
+        Label desc = new Label(tagsDescription);
+        desc.setStyle("-fx-font-size: 14px; -fx-text-fill: grey;");
 
-        ImageView gameImageView = new ImageView(new Image(getClass().getResource(game.getImage()).toString()));
-        gameImageView.setFitWidth(200);
-        gameImageView.setFitHeight(200);
+        // load the same Image again at a larger size
+        String imgSource = game.getImage();
+        Image cover;
+        if (imgSource.startsWith("file:") || imgSource.startsWith("http")) {
+            cover = new Image(imgSource, 200, 200, true, true);
+        } else {
+            cover = new Image(
+                    getClass().getResource(imgSource).toExternalForm(),
+                    200, 200, true, true
+            );
+        }
+        ImageView iv = new ImageView(cover);
 
-        newPageLayout.getChildren().addAll(titleLabel, gameDescription, gameImageView);
-
-        Scene newScene = new Scene(newPageLayout, 400, 300);
-
+        layout.getChildren().addAll(titleLabel, desc, iv);
+        Scene scene = new Scene(layout, 400, 300);
         newStage.setTitle(game.getTitle() + " - Details");
-
-        newStage.setScene(newScene);
+        newStage.setScene(scene);
         newStage.show();
     }
 }
-
