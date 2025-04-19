@@ -210,7 +210,6 @@ public class GameCatalogApp extends Application {
     }
 
     private void openAddGameWindow() {
-        // Open the AddGame window and pass 'this' to allow it to update the list
         AddGame addGameApp = new AddGame(this);
         Stage addGameStage = new Stage();
         addGameApp.start(addGameStage);
