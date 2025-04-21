@@ -2,6 +2,7 @@ package com.example.main_screen;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
@@ -218,6 +219,19 @@ public class GameCatalogApp extends Application {
     // Method to add the new game to the catalog and refresh the UI
     public void addNewGame(Game newGame) {
         allGames.add(newGame);  // Add the new game to the list
+
+        // Save the updated game list to the JSON file
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            // Configure objectMapper to use snake_case for fields
+            objectMapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+            objectMapper.writeValue(new File("src/main/resources/json/games.json"), allGames);
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Failed to save game to file.");
+            alert.showAndWait();
+        }
+
         displayGames(allGames); // Refresh the displayed list
     }
 
