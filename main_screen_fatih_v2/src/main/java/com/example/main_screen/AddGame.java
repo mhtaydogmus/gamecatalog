@@ -17,7 +17,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+<<<<<<< HEAD:main_screen_fatih_v2/src/main/java/com/example/main_screen/AddGame.java
 import java.util.Arrays;
+=======
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+>>>>>>> 306bc9f (update 2):src/main/java/com/example/main_screen/AddGame.java
 
 public class AddGame {
 
@@ -118,7 +124,11 @@ public class AddGame {
             );
             File selectedFile = fileChooser.showOpenDialog(addGameStage);
             if (selectedFile != null) {
+<<<<<<< HEAD:main_screen_fatih_v2/src/main/java/com/example/main_screen/AddGame.java
                 selectedImagePath = selectedFile.toURI().toString(); // e.g., file:/C:/images/game.png
+=======
+                selectedImagePath = selectedFile.toURI().toString();
+>>>>>>> 306bc9f (update 2):src/main/java/com/example/main_screen/AddGame.java
                 imagePreview.setImage(new Image(selectedImagePath));
             }
         });
@@ -150,12 +160,21 @@ public class AddGame {
 
                 // For list fields, handle empty input
                 String platformsText = fields[4].getText().trim();
+<<<<<<< HEAD:main_screen_fatih_v2/src/main/java/com/example/main_screen/AddGame.java
                 java.util.List<String> platforms = platformsText.isEmpty() ?
                         new java.util.ArrayList<>() : Arrays.asList(platformsText.split(","));
 
                 String translatorsText = fields[5].getText().trim();
                 java.util.List<String> translators = translatorsText.isEmpty() ?
                         new java.util.ArrayList<>() : Arrays.asList(translatorsText.split(","));
+=======
+                List<String> platforms = platformsText.isEmpty() ?
+                        new ArrayList<>() : Arrays.asList(platformsText.split(","));
+
+                String translatorsText = fields[5].getText().trim();
+                List<String> translators = translatorsText.isEmpty() ?
+                        new ArrayList<>() : Arrays.asList(translatorsText.split(","));
+>>>>>>> 306bc9f (update 2):src/main/java/com/example/main_screen/AddGame.java
 
                 String steamId = fields[6].getText().trim();
                 String releaseYear = fields[7].getText().trim();
@@ -163,8 +182,13 @@ public class AddGame {
                 String format = fields[9].getText().trim();
 
                 String languageText = fields[10].getText().trim();
+<<<<<<< HEAD:main_screen_fatih_v2/src/main/java/com/example/main_screen/AddGame.java
                 java.util.List<String> languages = languageText.isEmpty() ?
                         new java.util.ArrayList<>() : Arrays.asList(languageText.split(","));
+=======
+                List<String> languages = languageText.isEmpty() ?
+                        new ArrayList<>() : Arrays.asList(languageText.split(","));
+>>>>>>> 306bc9f (update 2):src/main/java/com/example/main_screen/AddGame.java
 
                 // Validate the rating is a valid number
                 double rating;
@@ -178,8 +202,13 @@ public class AddGame {
                 }
 
                 String tagsText = fields[12].getText().trim();
+<<<<<<< HEAD:main_screen_fatih_v2/src/main/java/com/example/main_screen/AddGame.java
                 java.util.List<String> tags = tagsText.isEmpty() ?
                         new java.util.ArrayList<>() : Arrays.asList(tagsText.split(","));
+=======
+                List<String> tags = tagsText.isEmpty() ?
+                        new ArrayList<>() : Arrays.asList(tagsText.split(","));
+>>>>>>> 306bc9f (update 2):src/main/java/com/example/main_screen/AddGame.java
 
                 if (selectedImagePath == null) {
                     Alert alert = new Alert(Alert.AlertType.WARNING, "Please select an image.");
@@ -200,6 +229,18 @@ public class AddGame {
                         playtime, format, languages, rating, tags, imgPath);
 
                 mainApp.addNewGame(newGame);
+<<<<<<< HEAD:main_screen_fatih_v2/src/main/java/com/example/main_screen/AddGame.java
+=======
+                mainApp.refreshCurrentView();
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Game Added");
+                alert.setHeaderText(null);
+                alert.setContentText("New Game Added Successfully!");
+                alert.showAndWait();
+
+
+>>>>>>> 306bc9f (update 2):src/main/java/com/example/main_screen/AddGame.java
                 addGameStage.close();
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -209,6 +250,10 @@ public class AddGame {
             }
         });
 
+<<<<<<< HEAD:main_screen_fatih_v2/src/main/java/com/example/main_screen/AddGame.java
+=======
+
+>>>>>>> 306bc9f (update 2):src/main/java/com/example/main_screen/AddGame.java
         VBox wrapper = new VBox(20);
         wrapper.getChildren().addAll(header, formGrid, submitBtn);
 
