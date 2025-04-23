@@ -180,7 +180,7 @@ public class GameCatalogApp extends Application {
         int columns = 3;
         int row = 0, col = 0;
         for (Game game : gamesToShow) {
-            GameLabel gameLabel = new GameLabel(game);
+            GameLabel gameLabel = new GameLabel(game,allGames);
             VBox itemBox = gameLabel.createItem();
             gridLayout.add(itemBox, col, row);
 
@@ -214,6 +214,10 @@ public class GameCatalogApp extends Application {
         AddGame addGameApp = new AddGame(this);
         Stage addGameStage = new Stage();
         addGameApp.start(addGameStage);
+    }
+
+    public void deleteGame(Game game) {
+        allGames.remove(game);
     }
 
     // Method to add the new game to the catalog and refresh the UI

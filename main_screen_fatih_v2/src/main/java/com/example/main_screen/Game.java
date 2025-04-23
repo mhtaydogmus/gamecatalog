@@ -1,9 +1,9 @@
 package com.example.main_screen;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.List;
 
 public class Game {
 
@@ -112,5 +112,17 @@ public class Game {
         }
 
         return tagsDescription.toString();
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public void setRating(double rating) {
+        this.rating=rating;
     }
 }
