@@ -346,6 +346,7 @@ public class GameCatalogApp extends Application {
         imageView.setFitHeight(600);
         imageView.setPreserveRatio(true);
 
+
         int[] currentIndex = {0};
         imageView.setImage(new Image(imagePaths.get(currentIndex[0])));
 
