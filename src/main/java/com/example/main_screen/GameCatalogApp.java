@@ -124,6 +124,7 @@ public class GameCatalogApp extends Application {
         );
 
 
+
         exportBtn.setOnAction(e -> exportSelectedGames());
         midBox.getChildren().addAll(appName,exportBtn);
 
