@@ -352,6 +352,7 @@ public class GameCatalogApp extends Application {
         Button prevBtn = new Button("⟵ Previous");
         Button nextBtn = new Button("Next ⟶");
 
+
         prevBtn.setOnAction(e -> {
             if (currentIndex[0] > 0) {
                 currentIndex[0]--;
