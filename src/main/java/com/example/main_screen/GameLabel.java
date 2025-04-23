@@ -66,8 +66,10 @@ public class GameLabel {
         gameDescription.setMaxHeight(60);
         gameDescription.setPadding(new Insets(0, 0, 0, 10));
 
+
+
         // add to vbox
-        itemBox.getChildren().addAll(selectBox,button, gameTitle, gameDescription);
+        itemBox.getChildren().addAll(button, gameTitle, gameDescription,selectBox);
 
         return itemBox;
     }
