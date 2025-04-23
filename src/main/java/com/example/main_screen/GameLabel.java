@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -20,10 +21,13 @@ import java.io.File;
 public class GameLabel {
 
     private Game game;
+    private CheckBox selectBox;
     private GameCatalogApp mainApp;
+
 
     public GameLabel(Game game) {
         this.game = game;
+        this.selectBox = new CheckBox();
     }
 
     public VBox createItem() {
@@ -63,9 +67,12 @@ public class GameLabel {
         gameDescription.setPadding(new Insets(0, 0, 0, 10));
 
         // add to vbox
-        itemBox.getChildren().addAll(button, gameTitle, gameDescription);
+        itemBox.getChildren().addAll(selectBox,button, gameTitle, gameDescription);
 
         return itemBox;
+    }
+    public boolean isSelected() {
+        return selectBox.isSelected();
     }
     private void openGamePage() {
         Stage newStage = new Stage();
@@ -184,6 +191,9 @@ public class GameLabel {
         );
         Scene editScene = new Scene(editLayout, 400, 800);
         stage.setScene(editScene);
+    }
+    public Game getGame() {
+        return game;
     }
 }
 

@@ -35,6 +35,8 @@ public class GameCatalogApp extends Application {
     private Region separator;
 
     private List<String> selectedTags = new ArrayList<>();
+    private List<GameLabel> displayedGameLabels = new ArrayList<>();
+
 
     @Override
     public void start(Stage stage) {
@@ -108,7 +110,22 @@ public class GameCatalogApp extends Application {
         midBox.setId("top_mid");
         midBox.setAlignment(Pos.CENTER);
         Label appName = new Label("GAME APP");
-        midBox.getChildren().add(appName);
+        Button exportBtn = new Button("Export Selected Games");
+
+        exportBtn.setStyle(
+                "-fx-font-size: 12px;" +
+                        "-fx-max-width: 300px;" +
+                        "-fx-max-height: 80px;" +
+                        "-fx-background-color: #eeeeee;" +
+                        "-fx-border-color: #cccccc;" +
+                        "-fx-border-radius: 10px;" +
+                        "-fx-cursor: hand;" +
+                        "-fx-margin: 0 0 0 10px;"
+        );
+
+
+        exportBtn.setOnAction(e -> exportSelectedGames());
+        midBox.getChildren().addAll(appName,exportBtn);
 
         midBox.setPrefWidth(Region.USE_COMPUTED_SIZE);
         HBox.setHgrow(midBox, Priority.ALWAYS);
@@ -290,12 +307,15 @@ public class GameCatalogApp extends Application {
             displayGames(allGames);
         });
 
+
+
         scene.getStylesheets().add(getClass().getResource("/light.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle("Game Catalog App");
         stage.setMaximized(true);
         stage.show();
     }
+
 
     private void openAddGameForm() {
         Stage addGameStage = new Stage();
@@ -443,8 +463,10 @@ public class GameCatalogApp extends Application {
 
             int row = 0, col = 0;
 
+            displayedGameLabels.clear();
             for (Game game : gamesToShow) {
                 GameLabel gameLabel = new GameLabel(game);
+                displayedGameLabels.add(gameLabel);
                 VBox itemBox = gameLabel.createItem();
 
                 gridLayout.add(itemBox, col, row);
@@ -577,6 +599,44 @@ public class GameCatalogApp extends Application {
     public List getallGames(){
         return allGames;
     }
+
+    private void exportSelectedGames() {
+        List<Game> selectedGames = displayedGameLabels.stream()
+                .filter(GameLabel::isSelected)
+                .map(GameLabel::getGame)
+                .collect(Collectors.toList());
+
+        if (selectedGames.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("No Selection");
+            alert.setHeaderText(null);
+            alert.setContentText("No games were selected for export.");
+            alert.showAndWait();
+            return;
+        }
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save Selected Games");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("JSON files", "*.json"));
+        File saveFile = fileChooser.showSaveDialog(null);
+
+        if (saveFile != null) {
+            ObjectMapper mapper = new ObjectMapper();
+            try {
+                mapper.writerWithDefaultPrettyPrinter().writeValue(saveFile, selectedGames);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Export Complete");
+                alert.setHeaderText(null);
+                alert.setContentText("Games exported successfully.");
+                alert.showAndWait();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
 
     public static void main(String[] args) {
         launch();
