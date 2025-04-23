@@ -572,6 +572,7 @@ public class GameCatalogApp extends Application {
             alert.showAndWait();
         }
         displayGames(allGames);
+
     }
 
     public List getallGames(){
