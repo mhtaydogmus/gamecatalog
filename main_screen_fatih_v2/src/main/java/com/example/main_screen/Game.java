@@ -1,13 +1,13 @@
 package com.example.main_screen;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 public class Game {
 
-    private String release_year;
+    private String releaseYear;
     private String title;
     private String genre;
     private String developer;
@@ -26,7 +26,7 @@ public class Game {
     public Game(@JsonProperty("title") String title, @JsonProperty("genre") String genre, @JsonProperty("developer") String developer,
                 @JsonProperty("publisher") String publisher, @JsonProperty("platforms") List<String> platforms,
                 @JsonProperty("translators") List<String> translators, @JsonProperty("steamid") String steamid,
-                @JsonProperty("release_year") String release_year, @JsonProperty("playtime") String playtime,
+                @JsonProperty("releaseYear") String releaseYear, @JsonProperty("playtime") String playtime,
                 @JsonProperty("format") String format, @JsonProperty("language") List<String> language,
                 @JsonProperty("rating") double rating, @JsonProperty("tags") List<String> tags, @JsonProperty("image") String image) {
         this.title = title;
@@ -36,7 +36,7 @@ public class Game {
         this.platforms = platforms;
         this.translators = translators;
         this.steamid = steamid;
-        this.release_year = release_year;
+        this.releaseYear = releaseYear;
         this.playtime = playtime;
         this.format = format;
         this.language = language;
@@ -74,7 +74,7 @@ public class Game {
     }
 
     public String getReleaseYear() {
-        return release_year;
+        return releaseYear;
     }
 
     public String getPlaytime() {
@@ -114,15 +114,61 @@ public class Game {
         return tagsDescription.toString();
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+
+    public void setTitle(String newtitle) {
+        this.title = newtitle;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setGenre(String newGenre) {
+        this.genre = newGenre;
     }
 
-    public void setRating(double rating) {
-        this.rating=rating;
+    public void setDeveloper(String newdeveloper) {
+        this.developer = newdeveloper;
     }
+
+    public void setPublisher(String newPublisher) {
+        this.publisher = newPublisher;
+    }
+
+    public void setPlatforms(List<String> newPlatforms) {
+        this.platforms = newPlatforms;
+    }
+
+    public void setTranslators(List<String> newTranslators) {
+        this.translators = newTranslators;
+    }
+
+    public void setSteamid(String newSteamId) {
+        this.steamid = newSteamId;
+    }
+
+    public void setReleaseYear(String newReleaseYear) {
+        this.releaseYear = newReleaseYear;
+    }
+
+    public void setPlaytime(String newPlaytime) {
+        this.playtime = newPlaytime;
+    }
+
+    public void setFormat(String newFormat) {
+        this.format = newFormat;
+    }
+
+    public void setLanguage(List<String> newLanguage) {
+        this.language = newLanguage;
+    }
+
+    public void setRating(double newRating) {
+        this.rating = newRating;
+    }
+
+    public void setTags(List<String> newTags) {
+        this.tags = newTags;
+    }
+
+    public void setImage(String newImage) {
+        this.image = newImage;
+    }
+
 }
