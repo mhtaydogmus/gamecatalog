@@ -326,9 +326,15 @@ public class GameCatalogApp extends Application {
 
     private void showHelpDialog() {
         List<String> imagePaths = List.of(
-                "/img/help/step1.jpg",
-                "/img/help/step2.jpg",
-                "/img/help/step3.jpg"
+                "/img/help/step1.png",
+                "/img/help/step2.png",
+                "/img/help/step3.png",
+                "/img/help/step4.png",
+                "/img/help/step5.png",
+                "/img/help/step6.png",
+                "/img/help/step7.png",
+                "/img/help/step8.png",
+                "/img/help/step9.png"
         );
 
         Dialog<Void> dialog = new Dialog<>();
@@ -336,8 +342,8 @@ public class GameCatalogApp extends Application {
         dialog.getDialogPane().getButtonTypes().add(ButtonType.CLOSE);
 
         ImageView imageView = new ImageView();
-        imageView.setFitWidth(600);
-        imageView.setFitHeight(400);
+        imageView.setFitWidth(800);
+        imageView.setFitHeight(600);
         imageView.setPreserveRatio(true);
 
         int[] currentIndex = {0};
