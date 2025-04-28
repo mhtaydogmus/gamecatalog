@@ -2,7 +2,7 @@ package com.example.main_screen;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -24,6 +24,44 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ButtonBar;
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ButtonBar;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.collections.FXCollections;import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.example.main_screen.Game;            // For Game class
+import com.example.main_screen.GameLabel;      // For GameLabel class
+import com.example.main_screen.GameLoader;     // For GameLoader class
+import com.fasterxml.jackson.databind.ObjectMapper;    // For Jackson's ObjectMapper
+import com.fasterxml.jackson.core.type.TypeReference;  // For TypeReference class
+import com.fasterxml.jackson.databind.PropertyNamingStrategy; // For PropertyNamingStrategy
+import java.util.List;  // For List type
+import java.util.ArrayList; // For ArrayList class
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+
+
+
+
 
 public class GameCatalogApp extends Application {
 
@@ -60,7 +98,7 @@ public class GameCatalogApp extends Application {
         HBox.setHgrow(leftBox, Priority.NEVER);
         leftBox.setMaxWidth(250);
 
-        ImageView logoImage = new ImageView(new Image("/img/test.jpg"));
+        ImageView logoImage = new ImageView(new Image(getClass().getResource("/img/test.jpg").toString()));
         logoImage.setFitWidth(100);
         logoImage.setFitHeight(100);
 
@@ -593,7 +631,7 @@ public class GameCatalogApp extends Application {
         allGames.add(newGame);
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+            objectMapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
             objectMapper.writeValue(new File("src/main/resources/json/games.json"), allGames);
         } catch (IOException e) {
             e.printStackTrace();

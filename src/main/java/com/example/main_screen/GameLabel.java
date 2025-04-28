@@ -1,4 +1,6 @@
 package com.example.main_screen;
+import com.example.main_screen.Game;
+
 
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -159,8 +161,10 @@ public class GameLabel {
         TextField ratingField = new TextField(String.valueOf(game.getRating()));
         TextField tagsField = new TextField(String.join(",", game.getTags()));
 
-        ImageView imagePreview = new ImageView(new Image(game.getImage(), 150, 200, true, true));
-        imagePreview.setUserData(game.getImage());
+        String imagePath = "/images/" + game.getImage();
+        ImageView imagePreview = new ImageView(new Image(getClass().getResourceAsStream(imagePath), 150, 200, true, true));
+        //ImageView imagePreview = new ImageView(new Image(game.getImage(), 150, 200, true, true));
+        //imagePreview.setUserData(game.getImage());
 
 
         Button imageButton = new Button("Choose Image");
