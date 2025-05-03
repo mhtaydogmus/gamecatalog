@@ -16,18 +16,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/AddGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/AddGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameLabel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameLabel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameLoader$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameLoader$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameCatalogApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameCatalogApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/main_screen-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/main_screen-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/help/step1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/help/step2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/help/step3.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746270694125</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="help button bug fix done">
+      <option name="closed" value="true" />
+      <created>1746272214411</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1746272214411</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +246,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="compile fix" />
     <MESSAGE value="minor fixes before major fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor fixes before major fixes" />
+    <MESSAGE value="help button bug fix done" />
+    <option name="LAST_COMMIT_MESSAGE" value="help button bug fix done" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
