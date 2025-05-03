@@ -368,7 +368,6 @@ public class GameCatalogApp extends Application {
 
         int[] currentIndex = {0};
 
-        // Ensure the image is loaded correctly from resources
         imageView.setImage(new Image(getClass().getResource(imagePaths.get(currentIndex[0])).toString()));
 
         Button prevBtn = new Button("⟵ Previous");

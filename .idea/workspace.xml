@@ -17,10 +17,20 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameLabel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameLabel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/main_screen-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/main_screen-1.0.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/example/main_screen/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/example/main_screen/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/example/main_screen/GameCatalogApp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/example/main_screen/GameCatalogApp$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/example/main_screen/GameCatalogApp$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/example/main_screen/GameCatalogApp$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/example/main_screen/GameCatalogApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/example/main_screen/GameCatalogApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/example/main_screen/GameLabel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/example/main_screen/GameLabel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/example/main_screen/GameLoader$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/example/main_screen/GameLoader$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/example/main_screen/GameLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/example/main_screen/GameLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameCatalogApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameCatalogApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/img/help/step1.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/img/help/step2.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/img/help/step3.jpg" beforeDir="false" />
@@ -129,6 +139,19 @@
   }
 }</component>
   <component name="RunManager">
+    <configuration name="GameCatalogApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.main_screen.GameCatalogApp" />
+      <module name="main_screen.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.main_screen.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="main_screen_fatih_v2" />
       <method v="2">
@@ -174,6 +197,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GameCatalogApp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -226,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746272214411</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="edit btn not opening dialog bug fixed">
+      <option name="closed" value="true" />
+      <created>1746273048640</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746273048640</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +283,8 @@
     <MESSAGE value="compile fix" />
     <MESSAGE value="minor fixes before major fixes" />
     <MESSAGE value="help button bug fix done" />
-    <option name="LAST_COMMIT_MESSAGE" value="help button bug fix done" />
+    <MESSAGE value="edit btn not opening dialog bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit btn not opening dialog bug fixed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
