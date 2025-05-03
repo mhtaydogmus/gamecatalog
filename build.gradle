@@ -22,7 +22,7 @@ ext {
 // Java version toolchain
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(22)
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
@@ -40,19 +40,30 @@ application {
     mainModule = 'com.example.main_screen'
     mainClass = 'com.example.main_screen.GameCatalogApp'
 }
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.example.main_screen.GameCatalogApp'
+        )
+    }
+}
 
 // JavaFX settings
 javafx {
-    version = '22'
+    version = '17'
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
 // Project dependencies
 dependencies {
     implementation 'org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0'
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.18.2'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
-    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.18.2'
+    //implementation 'com.fasterxml.jackson.core:jackson-core:2.18.2'
+    //implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
+    //implementation 'com.fasterxml.jackson.core:jackson-annotations:2.18.2'
+    implementation 'com.google.code.gson:gson:2.8.8'
+
+    implementation 'org.openjfx:javafx-controls:17'
+    implementation 'org.openjfx:javafx-fxml:17'
 
     // JUnit for testing
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
@@ -94,21 +105,33 @@ jlink {
         appVersion = "1.0.0"
         vendor = "YourCompany"
 
-        // Windows-specific installer settings
+        // Set installer type for all platforms
+        installerType = org.gradle.internal.os.OperatingSystem.current().isWindows() ? "exe" : "pkg"
+
+        // Windows-specific installer options
         if (org.gradle.internal.os.OperatingSystem.current().isWindows()) {
-            installerType = "exe"
-            imageOptions = ['--win-shortcut', '--win-menu', '--win-dir-chooser', '--win-per-user-install']
+            installerOptions = [
+                    '--win-shortcut',
+                    '--win-menu',
+                    '--win-dir-chooser',
+                    '--win-per-user-install'
+            ]
         }
 
         // Resource directory
         resourceDir = file("$buildDir/resources/main")
 
-        // Where the generated image will be stored
+        // Output directory
         imageOutputDir = file("$buildDir/jpackage")
 
-        // Additional options
-        imageOptions = ['--verbose']
+        // General options
+        options = ['--verbose']
     }
+
+
+
+
+
 }
 
 // A task to create a Windows package using jpackage

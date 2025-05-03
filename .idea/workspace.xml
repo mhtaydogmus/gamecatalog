@@ -10,30 +10,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="600317aa-6d0c-4cc3-809d-577e1b579671" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/main_screen_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/main_screen_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCatalogApp.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/AddGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/AddGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameCatalogApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameLabel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameLabel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameLoader$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameLoader$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/main_screen/GameLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/module-info.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/main_screen-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/main_screen-1.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/example/main_screen/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/example/main_screen/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/example/main_screen/GameCatalogApp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/example/main_screen/GameCatalogApp$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/example/main_screen/GameCatalogApp$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/example/main_screen/GameCatalogApp$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/example/main_screen/GameCatalogApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/example/main_screen/GameCatalogApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/example/main_screen/GameLabel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/example/main_screen/GameLabel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/example/main_screen/GameLoader$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/example/main_screen/GameLoader$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/example/main_screen/GameLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/example/main_screen/GameLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/com/example/main_screen/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GameCatalogApp$1.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GameCatalogApp$2.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GameCatalogApp.class.uniqueId4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GameLabel.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/module-info.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameCatalogApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameCatalogApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/main_screen/hello-view.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/img/help/step1.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/img/help/step2.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/img/help/step3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/json/games.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/games.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,35 +133,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Gradle.bitti3 [:com.example.main_screen.GameCatalogApp.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.bitti3.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/fatih/Desktop/bitti3&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Gradle.bitti3 [:com.example.main_screen.GameCatalogApp.main()].executor": "Run",
+    "Gradle.bitti3.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/fatih/Desktop/bitti3",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;,
-      &quot;module&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory",
+      "module"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="GameCatalogApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.main_screen.GameCatalogApp" />
@@ -262,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746273048640</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="last version before fixing main not found error">
+      <option name="closed" value="true" />
+      <created>1746276931736</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1746276931738</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +316,8 @@
     <MESSAGE value="minor fixes before major fixes" />
     <MESSAGE value="help button bug fix done" />
     <MESSAGE value="edit btn not opening dialog bug fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit btn not opening dialog bug fixed" />
+    <MESSAGE value="last version before fixing main not found error" />
+    <option name="LAST_COMMIT_MESSAGE" value="last version before fixing main not found error" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

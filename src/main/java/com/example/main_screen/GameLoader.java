@@ -1,10 +1,13 @@
 package com.example.main_screen;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -12,8 +15,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class GameLoader {
-    //class is buggy it will change
     private static final String JSON_FILE_PATH = "src/main/resources/json/games.json";
+
+    private static final Gson gson = new Gson();
 
     public static List<Game> loadGames() {
         try {
@@ -25,8 +29,10 @@ public class GameLoader {
                 return new ArrayList<>();
             }
 
-            ObjectMapper objectMapper = new ObjectMapper();
-            return objectMapper.readValue(file, new TypeReference<List<Game>>() {});
+            // Read JSON file using FileReader
+            FileReader fileReader = new FileReader(file);
+            Type listType = new TypeToken<List<Game>>() {}.getType();
+            return gson.fromJson(fileReader, listType);
 
         } catch (IOException e) {
             System.err.println("Error loading games: " + e.getMessage());
@@ -42,8 +48,10 @@ public class GameLoader {
                 directory.mkdirs();
             }
 
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(JSON_FILE_PATH), games);
+            // Write JSON file using FileWriter
+            FileWriter fileWriter = new FileWriter(new File(JSON_FILE_PATH));
+            gson.toJson(games, fileWriter);
+            fileWriter.flush();
             return true;
 
         } catch (IOException e) {

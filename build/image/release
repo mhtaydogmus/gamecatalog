@@ -1,0 +1,2 @@
+JAVA_VERSION="17.0.15"
+MODULES="java.base java.logging java.transaction.xa java.xml java.sql com.google.gson java.datatransfer java.prefs java.desktop javafx.base jdk.unsupported javafx.graphics javafx.controls java.scripting javafx.fxml com.example.main_screen com.example.merged.module"

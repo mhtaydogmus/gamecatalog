@@ -1,8 +1,8 @@
 package com.example.main_screen;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -18,8 +18,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -522,30 +522,26 @@ public class GameCatalogApp extends Application {
         File selectedFile = fileChooser.showOpenDialog(stage);
         if (selectedFile != null) {
             try {
-                ObjectMapper objectMapper = new ObjectMapper();
+                Gson gson = new Gson();
 
-                //load current
                 File gamesFile = new File("src/main/resources/json/games.json");
                 List<Game> existingGames = new ArrayList<>();
                 if (gamesFile.exists()) {
-                    existingGames= objectMapper.readValue(gamesFile, new TypeReference<List<Game>>() {});
+                    existingGames = gson.fromJson(new FileReader(gamesFile), new TypeToken<List<Game>>(){}.getType());
                 }
 
-                //load new
-                List<Game> newGames= objectMapper.readValue(selectedFile, new TypeReference<List<Game>>() {});
+                List<Game> newGames = gson.fromJson(new FileReader(selectedFile), new TypeToken<List<Game>>(){}.getType());
 
-                //append
                 existingGames.addAll(newGames);
 
-                //merge lists
-                objectMapper.writerWithDefaultPrettyPrinter().writeValue(gamesFile, existingGames);
+                try (FileWriter writer = new FileWriter(gamesFile)) {
+                    gson.toJson(existingGames, writer);
+                }
 
-                //update ui
                 allGames.clear();
                 allGames.addAll(existingGames);
                 displayGames(allGames);
 
-                //success message
                 Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
                 successAlert.setTitle("Success");
                 successAlert.setHeaderText(null);
@@ -554,7 +550,6 @@ public class GameCatalogApp extends Application {
 
             } catch (IOException e) {
                 e.printStackTrace();
-                //err message
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setTitle("Error");
                 errorAlert.setHeaderText("Adding JSON Failed");
@@ -563,6 +558,7 @@ public class GameCatalogApp extends Application {
             }
         }
     }
+
 
     private String toHexString(Color color) {
         int red= (int)(color.getRed() * 255);
@@ -611,17 +607,35 @@ public class GameCatalogApp extends Application {
     //mehmetin code block
     public void addNewGame(Game newGame) {
         allGames.add(newGame);
+
         try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
-            objectMapper.writeValue(new File("src/main/resources/json/games.json"), allGames);
+            File file = new File("src/main/resources/json/games.json");
+
+            List<Game> existingGames = new ArrayList<>();
+            if (file.exists()) {
+                try (Reader reader = new FileReader(file)) {
+                    Gson gson = new Gson();
+                    Type gameListType = new TypeToken<List<Game>>() {}.getType();
+                    existingGames = gson.fromJson(reader, gameListType);
+                }
+            }
+
+            existingGames.add(newGame);
+
+            try (Writer writer = new FileWriter(file)) {
+                Gson gson = new Gson();
+                gson.toJson(existingGames, writer);
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR, "Failed to save game to file.");
             alert.showAndWait();
         }
+
         displayGames(allGames);
     }
+
 
     public List getallGames(){
         //bugs sometimes with refresh
@@ -629,14 +643,14 @@ public class GameCatalogApp extends Application {
     }
 
     private void exportSelectedGames() {
-        //bug free dont touch
+        // Bug-free, don't touch
         List<Game> selectedGames = displayedGameLabels.stream()
                 .filter(GameLabel::isSelected)
                 .map(GameLabel::getGame)
                 .collect(Collectors.toList());
 
         if (selectedGames.isEmpty()) {
-            Alert alert= new Alert(Alert.AlertType.INFORMATION);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("No Selection");
             alert.setHeaderText(null);
             alert.setContentText("No games were selected for export.");
@@ -650,9 +664,9 @@ public class GameCatalogApp extends Application {
         File saveFile = fileChooser.showSaveDialog(null);
 
         if (saveFile != null) {
-            ObjectMapper mapper = new ObjectMapper();
-            try {
-                mapper.writerWithDefaultPrettyPrinter().writeValue(saveFile, selectedGames);
+            Gson gson = new Gson();
+            try (FileWriter writer = new FileWriter(saveFile)) {
+                gson.toJson(selectedGames, writer);
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Export Complete");
@@ -664,6 +678,7 @@ public class GameCatalogApp extends Application {
             }
         }
     }
+
 
 
 
