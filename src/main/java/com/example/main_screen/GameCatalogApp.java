@@ -16,7 +16,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -27,9 +26,7 @@ import java.util.stream.Collectors;
 
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ButtonBar;
-import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
+
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -39,25 +36,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Dialog;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ButtonBar;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.collections.FXCollections;import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.PropertyNamingStrategies;
-import com.example.main_screen.Game;            // For Game class
-import com.example.main_screen.GameLabel;      // For GameLabel class
-import com.example.main_screen.GameLoader;     // For GameLoader class
-import com.fasterxml.jackson.databind.ObjectMapper;    // For Jackson's ObjectMapper
-import com.fasterxml.jackson.core.type.TypeReference;  // For TypeReference class
-import com.fasterxml.jackson.databind.PropertyNamingStrategy; // For PropertyNamingStrategy
-import java.util.List;  // For List type
-import java.util.ArrayList; // For ArrayList class
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 
 
 
@@ -203,7 +181,7 @@ public class GameCatalogApp extends Application {
 
         ComboBox<String> dropdownMenu = new ComboBox<>();
         dropdownMenu.setId("dropdown_menu");
-        dropdownMenu.setItems(FXCollections.observableArrayList("Title","Tags", "Release Year", "Genre","Developer","Publisher"
+        dropdownMenu.setItems(FXCollections.observableArrayList("Title","Tags", "Genre","Developer","Publisher"
                 ,"SteamID","Release Year","Play Time","Format","Rating","Platforms","Translators","Languages"));
         dropdownMenu.getSelectionModel().select("Title");
 
@@ -527,7 +505,7 @@ public class GameCatalogApp extends Application {
     }
     public void refreshCurrentView(){
         allGames.clear();
-        GameLoader gameLoader2 = new GameLoader();
+        //GameLoader gameLoader2 = new GameLoader();
         allGames = GameLoader.loadGames();
         System.out.println("Total games after refresh: " + allGames.size());
         displayGames(allGames);
@@ -537,7 +515,6 @@ public class GameCatalogApp extends Application {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("JSON Files", "*.json"));
         File selectedFile = fileChooser.showOpenDialog(stage);
-
         if (selectedFile != null) {
             try {
                 ObjectMapper objectMapper = new ObjectMapper();
@@ -546,11 +523,11 @@ public class GameCatalogApp extends Application {
                 File gamesFile = new File("src/main/resources/json/games.json");
                 List<Game> existingGames = new ArrayList<>();
                 if (gamesFile.exists()) {
-                    existingGames = objectMapper.readValue(gamesFile, new TypeReference<List<Game>>() {});
+                    existingGames= objectMapper.readValue(gamesFile, new TypeReference<List<Game>>() {});
                 }
 
                 //load new
-                List<Game> newGames = objectMapper.readValue(selectedFile, new TypeReference<List<Game>>() {});
+                List<Game> newGames= objectMapper.readValue(selectedFile, new TypeReference<List<Game>>() {});
 
                 //append
                 existingGames.addAll(newGames);
@@ -583,7 +560,7 @@ public class GameCatalogApp extends Application {
     }
 
     private String toHexString(Color color) {
-        int red = (int)(color.getRed() * 255);
+        int red= (int)(color.getRed() * 255);
         int green = (int)(color.getGreen() * 255);
         int blue = (int)(color.getBlue() * 255);
 
@@ -591,7 +568,7 @@ public class GameCatalogApp extends Application {
     }
 
     private void toggleNightMode(Stage stage, VBox root) {
-        Scene currentScene = stage.getScene();
+        Scene currentScene= stage.getScene();
 
         if (isNightMode) {
             //switch 2 light
@@ -642,17 +619,19 @@ public class GameCatalogApp extends Application {
     }
 
     public List getallGames(){
+        //bugs sometimes with refresh
         return allGames;
     }
 
     private void exportSelectedGames() {
+        //bug free dont touch
         List<Game> selectedGames = displayedGameLabels.stream()
                 .filter(GameLabel::isSelected)
                 .map(GameLabel::getGame)
                 .collect(Collectors.toList());
 
         if (selectedGames.isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            Alert alert= new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("No Selection");
             alert.setHeaderText(null);
             alert.setContentText("No games were selected for export.");

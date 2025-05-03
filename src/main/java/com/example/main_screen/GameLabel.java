@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
 
 public class GameLabel {
@@ -37,12 +38,29 @@ public class GameLabel {
         itemBox.setId("game_item");
         itemBox.setAlignment(Pos.CENTER);
 
+        String imagePath = game.getImage();
+        Image image;
+
+        if (imagePath != null) {
+            if (imagePath.startsWith("file:/") || imagePath.matches("^[a-zA-Z]:\\\\.*")) {
+                image = new Image(imagePath.startsWith("file:/") ? imagePath : new File(imagePath).toURI().toString());
+            } else {
+                URL resource = getClass().getResource(imagePath);
+                if (resource != null) {
+                    image = new Image(resource.toExternalForm());
+                } else {
+                    image = new Image(getClass().getResource("/img/test.jpg").toExternalForm());
+                }
+            }
+        } else {
+            image = new Image(getClass().getResource("/img/test.jpg").toExternalForm());
+        }
+
         // game img
-        ImageView gameImageView = new ImageView(new Image(getClass().getResource(game.getImage()).toString()));
+        ImageView gameImageView = new ImageView(image);
         gameImageView.setFitWidth(150);
         gameImageView.setFitHeight(225);
         gameImageView.setId("game_image");
-
 
         // btn for redirect
         Button button = new Button();
@@ -54,12 +72,11 @@ public class GameLabel {
         // game title
         Label gameTitle = new Label(game.getTitle());
         gameTitle.getStyleClass().add("game_item_label");
-
         gameTitle.setMaxWidth(175);
         gameTitle.setWrapText(true);
         gameTitle.setPadding(new Insets(0, 0, 0, 10));
 
-        //description
+        // description
         String tagsDescription = game.getDescription(game.getTags());
         Label gameDescription = new Label(tagsDescription);
         gameDescription.getStyleClass().add("game_description");
@@ -68,13 +85,12 @@ public class GameLabel {
         gameDescription.setMaxHeight(60);
         gameDescription.setPadding(new Insets(0, 0, 0, 10));
 
-
-
         // add to vbox
-        itemBox.getChildren().addAll(button, gameTitle, gameDescription,selectBox);
+        itemBox.getChildren().addAll(button, gameTitle, gameDescription, selectBox);
 
         return itemBox;
     }
+
     public boolean isSelected() {
         return selectBox.isSelected();
     }
@@ -84,11 +100,9 @@ public class GameLabel {
         layout.setPadding(new Insets(15));
         layout.setStyle("-fx-background-color: #f9f9f9;");
 
-        // Title
         Label titleLabel = new Label("Title: " + game.getTitle());
         titleLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 18px;");
 
-        // Larger game image
         String imgSource = game.getImage();
         Image cover;
         if (imgSource.startsWith("file:") || imgSource.startsWith("http")) {
@@ -98,7 +112,6 @@ public class GameLabel {
         }
         ImageView iv = new ImageView(cover);
 
-        // All other fields
         Label genreLabel = new Label("Genre: " + game.getGenre());
         Label devLabel = new Label("Developer: " + game.getDeveloper());
         Label pubLabel = new Label("Publisher: " + game.getPublisher());
@@ -113,9 +126,12 @@ public class GameLabel {
         Label languagesLabel = new Label("Languages: " + String.join(", ", game.getLanguage()));
         Label tagsLabel = new Label("Tags: " + game.getDescription(game.getTags()));
 
-        // Buttons
         Button edit = new Button("Edit");
-        edit.setOnAction((ActionEvent e) -> editScreen(newStage, game));
+        edit.setOnAction((ActionEvent e) -> {
+            System.out.println("Edit button pressed");
+            editScreen(newStage, game);
+        });
+
 
         Button delete = new Button("Delete");
         delete.setOnAction((ActionEvent e) -> {
@@ -161,8 +177,9 @@ public class GameLabel {
         TextField ratingField = new TextField(String.valueOf(game.getRating()));
         TextField tagsField = new TextField(String.join(",", game.getTags()));
 
-        String imagePath = "/images/" + game.getImage();
+        String imagePath = game.getImage().startsWith("/images/") ? game.getImage() : "/images/" + game.getImage();
         ImageView imagePreview = new ImageView(new Image(getClass().getResourceAsStream(imagePath), 150, 200, true, true));
+
         //ImageView imagePreview = new ImageView(new Image(game.getImage(), 150, 200, true, true));
         //imagePreview.setUserData(game.getImage());
 

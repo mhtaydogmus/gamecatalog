@@ -44,63 +44,6 @@ public class Game {
         this.tags = tags;
         this.image = image;
     }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public String getDeveloper() {
-        return developer;
-    }
-
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public List<String> getPlatforms() {
-        return platforms;
-    }
-
-    public List<String> getTranslators() {
-        return translators;
-    }
-
-    public String getSteamid() {
-        return steamid;
-    }
-
-    public String getReleaseYear() {
-        return releaseYear;
-    }
-
-    public String getPlaytime() {
-        return playtime;
-    }
-
-    public String getFormat() {
-        return format;
-    }
-
-    public List<String> getLanguage() {
-        return language;
-    }
-
-    public double getRating() {
-        return rating;
-    }
-
-    public List<String> getTags() {
-        return tags;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
     public String getDescription(List<String> tags) {
         StringBuilder tagsDescription = new StringBuilder();
 
@@ -113,63 +56,144 @@ public class Game {
 
         return tagsDescription.toString();
     }
-
-
-    public void setTitle(String newtitle) {
-        this.title = newtitle;
+    public String getImage() {
+        return image;
+    }
+    public String getTitle() {
+        return title;
+    }
+    public List<String> getTags() {
+        return tags;
     }
 
-    public void setGenre(String newGenre) {
-        this.genre = newGenre;
+    public double getRating() {
+        return rating;
+    }
+    public List<String> getLanguage() {
+        return language;
+    }
+    public String getFormat() {
+        return format;
+    }
+    public String getPlaytime() {
+        return playtime;
+    }
+    public String getReleaseYear() {
+        return releaseYear;
+    }
+    public String getSteamid() {
+        return steamid;
+    }
+    public List<String> getTranslators() {
+        return translators;
+    }
+    public List<String> getPlatforms() {
+        return platforms;
+    }
+    public String getDeveloper() {
+        return developer;
+    }
+    public String getPublisher() {
+        return publisher;
     }
 
-    public void setDeveloper(String newdeveloper) {
-        this.developer = newdeveloper;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setPublisher(String newPublisher) {
-        this.publisher = newPublisher;
-    }
 
-    public void setPlatforms(List<String> newPlatforms) {
-        this.platforms = newPlatforms;
-    }
 
-    public void setTranslators(List<String> newTranslators) {
-        this.translators = newTranslators;
-    }
 
-    public void setSteamid(String newSteamId) {
-        this.steamid = newSteamId;
-    }
 
-    public void setReleaseYear(String newReleaseYear) {
-        this.releaseYear = newReleaseYear;
-    }
 
-    public void setPlaytime(String newPlaytime) {
-        this.playtime = newPlaytime;
-    }
 
-    public void setFormat(String newFormat) {
-        this.format = newFormat;
-    }
 
-    public void setLanguage(List<String> newLanguage) {
-        this.language = newLanguage;
-    }
 
-    public void setRating(double newRating) {
-        this.rating = newRating;
-    }
 
-    public void setTags(List<String> newTags) {
-        this.tags = newTags;
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public void setImage(String newImage) {
         this.image = newImage;
     }
+    public void setTags(List<String> newTags) {
+        this.tags = newTags;
+    }
+    public void setRating(double newRating) {
+        this.rating = newRating;
+    }
+    public void setLanguage(List<String> newLanguage) {
+        this.language = newLanguage;
+    }
+    public void setFormat(String newFormat) {
+        this.format = newFormat;
+    }
+    public void setPlaytime(String newPlaytime) {
+        this.playtime = newPlaytime;
+    }
+    public void setReleaseYear(String newReleaseYear) {
+        this.releaseYear = newReleaseYear;
+    }
+    public void setSteamid(String newSteamId) {
+        this.steamid = newSteamId;
+    }
+    public void setTranslators(List<String> newTranslators) {
+        this.translators = newTranslators;
+    }
+    public void setPlatforms(List<String> newPlatforms) {
+        this.platforms = newPlatforms;
+    }
+    public void setPublisher(String newPublisher) {
+        this.publisher = newPublisher;
+    }
+    public void setDeveloper(String newdeveloper) {
+        this.developer = newdeveloper;
+    }
+    public void setTitle(String newtitle) {
+        this.title = newtitle;
+    }
+    public void setGenre(String newGenre) {
+        this.genre = newGenre;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

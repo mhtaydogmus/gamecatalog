@@ -27,8 +27,8 @@ java {
 }
 
 // Java version
-sourceCompatibility = '22'
-targetCompatibility = '22'
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
 // Encoding settings
 tasks.withType(JavaCompile) {
