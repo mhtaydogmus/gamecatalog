@@ -115,7 +115,12 @@ public class GameCatalogApp extends Application {
                         "-fx-border-color: #cccccc;" +
                         "-fx-border-radius: 10px;" +
                         "-fx-cursor: hand;");
-        helpButton.setOnAction(e -> showHelpDialog());
+
+        helpButton.setOnAction(event -> {
+            System.out.println("help clicked");
+            showHelpDialog();
+        });
+
 
         HBox insideLeftBox=new HBox(35);
         insideLeftBox.getChildren().addAll(toggleButton,helpButton);
@@ -361,25 +366,25 @@ public class GameCatalogApp extends Application {
         imageView.setFitHeight(600);
         imageView.setPreserveRatio(true);
 
-
         int[] currentIndex = {0};
-        imageView.setImage(new Image(imagePaths.get(currentIndex[0])));
+
+        // Ensure the image is loaded correctly from resources
+        imageView.setImage(new Image(getClass().getResource(imagePaths.get(currentIndex[0])).toString()));
 
         Button prevBtn = new Button("⟵ Previous");
         Button nextBtn = new Button("Next ⟶");
 
-
         prevBtn.setOnAction(e -> {
             if (currentIndex[0] > 0) {
                 currentIndex[0]--;
-                imageView.setImage(new Image(imagePaths.get(currentIndex[0])));
+                imageView.setImage(new Image(getClass().getResource(imagePaths.get(currentIndex[0])).toString()));
             }
         });
 
         nextBtn.setOnAction(e -> {
             if (currentIndex[0] < imagePaths.size() - 1) {
                 currentIndex[0]++;
-                imageView.setImage(new Image(imagePaths.get(currentIndex[0])));
+                imageView.setImage(new Image(getClass().getResource(imagePaths.get(currentIndex[0])).toString()));
             }
         });
 
@@ -393,6 +398,7 @@ public class GameCatalogApp extends Application {
         dialog.getDialogPane().setContent(content);
         dialog.showAndWait();
     }
+
 
     private void applyFilters(String query, String criterion) {
         String lowerQuery = query.toLowerCase();
