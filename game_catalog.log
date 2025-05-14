@@ -2,3 +2,17 @@ May 12, 2025 9:54:13 PM com.example.main_screen.GameLabel editScreen
 INFO: Opening edit screen for game: 8888
 May 12, 2025 9:54:14 PM com.example.main_screen.GameLabel editScreen
 INFO: Edit screen shown successfully.
+May 14, 2025 8:38:32 AM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: q
+May 14, 2025 8:38:32 AM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 8:38:46 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Selected File: C:\Users\fatih\Desktop\monocrystalline.png
+May 14, 2025 8:38:46 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Target Directory: C:\Users\fatih\GameCatalogApp\images
+May 14, 2025 8:38:46 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: File with the same name exists, new name: C:\Users\fatih\GameCatalogApp\images\1747201126553_monocrystalline.png
+May 14, 2025 8:38:46 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Copying to: C:\Users\fatih\GameCatalogApp\images\1747201126553_monocrystalline.png
+May 14, 2025 8:38:46 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Image copied successfully.
