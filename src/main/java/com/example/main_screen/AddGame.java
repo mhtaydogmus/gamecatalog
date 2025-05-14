@@ -227,4 +227,8 @@ public class AddGame {
         addGameStage.setTitle("Add New Game");
         addGameStage.show();
     }
+    public void ichangedsmthGithubPushit(){
+        int nothing=0;
+        return;
+    }
 }

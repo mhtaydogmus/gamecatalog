@@ -404,7 +404,10 @@ public class GameLabel {
             alert.showAndWait();
         }
     }
-
+    public void ichangedsmthGithubPushit(){
+        int nothing=0;
+        return;
+    }
     public Game getGame() {
         return game;
     }

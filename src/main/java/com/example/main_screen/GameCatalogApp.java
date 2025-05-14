@@ -887,6 +887,7 @@ public class GameCatalogApp extends Application {
 
     */
     public void ichangedsmthGithubPushit(){
+        int nothing=0;
         return;
     }
     private void exportSelectedGames() {

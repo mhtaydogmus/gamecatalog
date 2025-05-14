@@ -170,4 +170,8 @@ public class Game {
     public void setGenre(String newGenre) {
         this.genre = newGenre;
     }
+    public void ichangedsmthGithubPushit(){
+        int nothing=0;
+        return;
+    }
 }

@@ -59,4 +59,8 @@ public class GameLoader {
             return false;
         }
     }
+    public void ichangedsmthGithubPushit(){
+        int nothing=0;
+        return;
+    }
 }
