@@ -11,11 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="600317aa-6d0c-4cc3-809d-577e1b579671" name="Changes" comment="edit dublicates and messing with img path i guess">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/AddGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/AddGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameCatalogApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameCatalogApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_catalog.log" beforeDir="false" afterPath="$PROJECT_DIR$/game_catalog.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747201191124</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="edit dublicates and messing with img path i guess">
+      <option name="closed" value="true" />
+      <created>1747201498882</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1747201498882</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

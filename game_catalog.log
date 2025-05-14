@@ -16,3 +16,117 @@ May 14, 2025 8:38:46 AM com.example.main_screen.GameLabel lambda$editScreen$3
 INFO: Copying to: C:\Users\fatih\GameCatalogApp\images\1747201126553_monocrystalline.png
 May 14, 2025 8:38:46 AM com.example.main_screen.GameLabel lambda$editScreen$3
 INFO: Image copied successfully.
+May 14, 2025 8:54:42 AM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: q
+May 14, 2025 8:54:43 AM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 8:54:56 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Selected File: C:\Users\fatih\Desktop\nihal 5.jpg
+May 14, 2025 8:54:56 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Target Directory: C:\Users\fatih\GameCatalogApp\images
+May 14, 2025 8:54:56 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: File with the same name exists, new name: C:\Users\fatih\GameCatalogApp\images\1747202096810_nihal 5.jpg
+May 14, 2025 8:54:56 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Copying to: C:\Users\fatih\GameCatalogApp\images\1747202096810_nihal 5.jpg
+May 14, 2025 8:55:12 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Selected File: C:\Users\fatih\Desktop\solarefficiency2-4-1024x299.png
+May 14, 2025 8:55:12 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Target Directory: C:\Users\fatih\GameCatalogApp\images
+May 14, 2025 8:55:12 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Copying to: C:\Users\fatih\GameCatalogApp\images\solarefficiency2-4-1024x299.png
+May 14, 2025 8:55:30 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Selected File: C:\Users\fatih\Desktop\efficiency.png
+May 14, 2025 8:55:30 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Target Directory: C:\Users\fatih\GameCatalogApp\images
+May 14, 2025 8:55:30 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: File with the same name exists, new name: C:\Users\fatih\GameCatalogApp\images\1747202130429_efficiency.png
+May 14, 2025 8:55:30 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Copying to: C:\Users\fatih\GameCatalogApp\images\1747202130429_efficiency.png
+May 14, 2025 8:57:24 AM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: q
+May 14, 2025 8:57:24 AM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 8:57:36 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Selected File: C:\Users\fatih\Desktop\monocrystalline.png
+May 14, 2025 8:57:36 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Target Directory: C:\Users\fatih\GameCatalogApp\images
+May 14, 2025 8:57:36 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: File with the same name exists, new name: C:\Users\fatih\GameCatalogApp\images\1747202256550_monocrystalline.png
+May 14, 2025 8:57:36 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Copying to: C:\Users\fatih\GameCatalogApp\images\1747202256550_monocrystalline.png
+May 14, 2025 8:57:36 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Image copied successfully.
+May 14, 2025 8:57:52 AM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: Slay the Spire
+May 14, 2025 8:57:52 AM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 8:58:05 AM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: Slay the Spire2
+May 14, 2025 8:58:05 AM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 8:58:18 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Selected File: C:\Users\fatih\Desktop\solarefficiency2-4-1024x299.png
+May 14, 2025 8:58:18 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Target Directory: C:\Users\fatih\GameCatalogApp\images
+May 14, 2025 8:58:18 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: File with the same name exists, new name: C:\Users\fatih\GameCatalogApp\images\1747202298999_solarefficiency2-4-1024x299.png
+May 14, 2025 8:58:18 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Copying to: C:\Users\fatih\GameCatalogApp\images\1747202298999_solarefficiency2-4-1024x299.png
+May 14, 2025 8:58:19 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Image copied successfully.
+May 14, 2025 9:06:09 AM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: Slay the Spire2
+May 14, 2025 9:06:09 AM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 9:06:32 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Selected File: C:\Users\fatih\Desktop\2025-05-13 12_32_42-VisualVM 2.2.png
+May 14, 2025 9:06:32 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Target Directory: C:\Users\fatih\GameCatalogApp\images
+May 14, 2025 9:06:32 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Copying to: C:\Users\fatih\GameCatalogApp\images\2025-05-13 12_32_42-VisualVM 2.2.png
+May 14, 2025 9:06:32 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Image copied successfully.
+May 14, 2025 9:06:47 AM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: RimWorld
+May 14, 2025 9:06:48 AM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 9:07:22 AM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: RimWorld2
+May 14, 2025 9:07:23 AM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 9:07:36 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Selected File: C:\Users\fatih\Desktop\monocrystalline.png
+May 14, 2025 9:07:36 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Target Directory: C:\Users\fatih\GameCatalogApp\images
+May 14, 2025 9:07:36 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Image copied successfully.
+May 14, 2025 9:07:36 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Copying to: C:\Users\fatih\GameCatalogApp\images\monocrystalline.png
+May 14, 2025 9:07:36 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Image copied successfully.
+May 14, 2025 9:14:09 AM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: Slay the Spire2
+May 14, 2025 9:14:09 AM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 9:14:22 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Selected File: C:\Users\fatih\Desktop\monocrystalline.png
+May 14, 2025 9:14:22 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Target Directory: C:\Users\fatih\GameCatalogApp\images
+May 14, 2025 9:14:22 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Image copied successfully.
+May 14, 2025 9:14:22 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Copying to: C:\Users\fatih\GameCatalogApp\images\monocrystalline.png
+May 14, 2025 9:14:22 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Image copied successfully.
+May 14, 2025 9:14:31 AM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: q
+May 14, 2025 9:14:31 AM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 9:14:46 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Selected File: C:\Users\fatih\Desktop\c7db644d185e49fc24849c6ba65d6de85c1e4ecf699d0fbfeba4a4d0f8fbb552_1.jpg
+May 14, 2025 9:14:46 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Target Directory: C:\Users\fatih\GameCatalogApp\images
+May 14, 2025 9:14:46 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Copying to: C:\Users\fatih\GameCatalogApp\images\c7db644d185e49fc24849c6ba65d6de85c1e4ecf699d0fbfeba4a4d0f8fbb552_1.jpg
+May 14, 2025 9:14:46 AM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Image copied successfully.

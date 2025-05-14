@@ -216,8 +216,12 @@ public class GameLabel {
             TextField ratingField = new TextField(String.valueOf(game.getRating()));
             TextField tagsField = new TextField(String.join(",", game.getTags()));
 
-            ImageView imagePreview = new ImageView(new Image(game.getFullImagePath(), 150, 200, true, true));
-            imagePreview.setUserData(game.getFullImagePath());
+            String imagePath = System.getProperty("user.home") + File.separator + "GameCatalogApp" + game.getImage();
+            ImageView imagePreview = new ImageView(new Image(new File(imagePath).toURI().toString(),
+                    150, 200, true, true));
+            imagePreview.setUserData(game.getImage());
+
+
 
 
             Button imageButton = new Button("Choose Image");
@@ -229,28 +233,28 @@ public class GameLabel {
 
                 if (selectedFile != null) {
                     try {
-                        // Define the directory for app images
                         String userImagePath = System.getProperty("user.home") + File.separator + "GameCatalogApp" + File.separator + "images" + File.separator;
 
                         File appImageDir = new File(userImagePath);
 
-                        // Debug: Log the selected file and target directory
                         logger.info("Selected File: " + selectedFile.getAbsolutePath());
                         logger.info("Target Directory: " + appImageDir.getAbsolutePath());
 
-                        // Create the directory if it doesn't exist
                         if (!appImageDir.exists()) {
                             boolean created = appImageDir.mkdirs();
                             logger.info("Directory created: " + created);
                         }
 
-                        // Ensure the file doesn't exist already to avoid collision
                         File copiedFile = new File(appImageDir, selectedFile.getName());
                         if (copiedFile.exists()) {
-                            String newName = System.currentTimeMillis() + "_" + selectedFile.getName();
-                            copiedFile = new File(appImageDir, newName); // Rename to avoid collision
-                            logger.info("File with the same name exists, new name: " + copiedFile.getAbsolutePath());
+                            String relativePath = "/images/" + copiedFile.getName();
+                            String absolutePath = System.getProperty("user.home") + File.separator + "GameCatalogApp" + relativePath;
+
+                            imagePreview.setImage(new Image(new File(absolutePath).toURI().toString(), 150, 200, true, true));
+                            imagePreview.setUserData(relativePath);
+                            logger.info("Image copied successfully.");
                         }
+
 
                         logger.info("Copying to: " + copiedFile.getAbsolutePath());
 
@@ -261,9 +265,13 @@ public class GameLabel {
                         );
 
                         if (copiedFile.exists()) {
-                            String finalPath = copiedFile.toURI().toString();
-                            imagePreview.setImage(new Image(finalPath, 150, 200, true, true));
-                            imagePreview.setUserData(finalPath);
+                            String relativePath = "/images/" + copiedFile.getName();
+                            String absolutePath = System.getProperty("user.home") + File.separator + "GameCatalogApp" + relativePath;
+
+                            imagePreview.setImage(new Image(new File(absolutePath).toURI().toString(), 150, 200, true, true));
+                            imagePreview.setUserData(relativePath);
+
+
                             logger.info("Image copied successfully.");
                         } else {
                             logger.severe("Error: Image file could not be copied.");
@@ -326,7 +334,15 @@ public class GameLabel {
                 }
 
                 try {
-                    Image testImage = new Image(image, 10, 10, true, true);
+                    // Fix for image validation with relative path
+                    String absoluteImagePath = System.getProperty("user.home") + File.separator + "GameCatalogApp" + image;
+                    File imageFile = new File(absoluteImagePath);
+                    if (!imageFile.exists()) {
+                        errorLabel.setText("Selected image file not found.");
+                        return;
+                    }
+
+                    Image testImage = new Image(imageFile.toURI().toString(), 10, 10, true, true);
                     if (testImage.isError()) {
                         errorLabel.setText("Image failed to load.");
                         return;
@@ -335,7 +351,7 @@ public class GameLabel {
                     errorLabel.setText("");
 
                     game.setTitle(title);
-                    game.setImage(image);
+                    game.setImage(image); // still using the relative path like /images/abc.jpg
                     game.setGenre(genreText);
                     game.setDeveloper(developerText);
                     game.setPublisher(publisherText);
@@ -350,8 +366,6 @@ public class GameLabel {
                     game.setLanguage(List.of(languageText.split("\\s*,\\s*")));
                     game.setTags(List.of(tagsText.split("\\s*,\\s*")));
 
-                    mainApp.getallGames().add(game);
-
                     GameLoader.saveGames(mainApp.getallGames());
                     mainApp.refreshCurrentView();
 
@@ -361,6 +375,7 @@ public class GameLabel {
                     ex.printStackTrace();
                     errorLabel.setText("Error updating game.");
                 }
+
             });
 
 
