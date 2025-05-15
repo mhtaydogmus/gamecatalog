@@ -69,34 +69,42 @@ public class GameCatalogApp extends Application {
         GameLabel.setupLogger();
 
         Path appDir = getAppDataDirectory();
+
+        String[] defaultImages = {"test.jpg"};
         Path imagesDir = appDir.resolve("images");
 
         if (!Files.exists(imagesDir)) {
             try {
                 Files.createDirectories(imagesDir);
                 System.out.println("Created images folder at: " + imagesDir);
-
-                String[] defaultImages = { "test.jpg", "test2.jpg", "test3.jpg" };
-
-                for (String imageName : defaultImages) {
-                    try (InputStream in = getClass().getResourceAsStream("/images/" + imageName)) {
-                        if (in != null) {
-                            Path target = imagesDir.resolve(imageName);
-                            Files.copy(in, target, StandardCopyOption.REPLACE_EXISTING);
-                            System.out.println("Copied: " + imageName);
-                        } else {
-                            System.err.println("Resource not found: /images/" + imageName);
-                        }
-                    } catch (IOException e) {
-                        System.err.println("Failed to copy image: " + imageName);
-                        e.printStackTrace();
-                    }
-                }
-
             } catch (IOException e) {
+                System.err.println("Failed to create images directory: " + imagesDir);
                 e.printStackTrace();
             }
         }
+
+        for (String imageName : defaultImages) {
+            try (InputStream in = getClass().getResourceAsStream("/images/" + imageName)) {
+                if (in == null) {
+                    System.err.println("Resource not found in JAR: /images/" + imageName);
+                    continue;
+                }
+
+                Path target = imagesDir.resolve(imageName);
+
+                if (!Files.exists(target)) {
+                    Files.copy(in, target);
+                    System.out.println("Copied default image: " + target);
+                } else {
+                    System.out.println("Image already exists, skipped: " + target);
+                }
+
+            } catch (IOException e) {
+                System.err.println("Failed to copy image: " + imageName);
+                e.printStackTrace();
+            }
+        }
+
 
 
 
@@ -120,11 +128,17 @@ public class GameCatalogApp extends Application {
         HBox.setHgrow(leftBox, Priority.NEVER);
         leftBox.setMaxWidth(250);
 
-        String imagePath = getClass().getResource("/images/test.jpg").toExternalForm();
 
 
-        //String imagePath = System.getProperty("user.home") + "/GameCatalogApp/images/test.jpg";
-        ImageView logoImage = new ImageView(new Image(new File(imagePath).toURI().toString()));
+        InputStream logoStream = getClass().getResourceAsStream("/images/test.jpg");
+
+        ImageView logoImage;
+        if (logoStream != null) {
+            logoImage = new ImageView(new Image(logoStream));
+        } else {
+            System.err.println("Could not load image from resources: /images/test.jpg");
+            logoImage = new ImageView();
+        }
 
         //ImageView logoImage = new ImageView(new Image(getClass().getResource("/img/test.jpg").toString()));
         logoImage.setFitWidth(100);
