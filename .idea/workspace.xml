@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="600317aa-6d0c-4cc3-809d-577e1b579671" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_catalog.log" beforeDir="false" afterPath="$PROJECT_DIR$/game_catalog.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_catalog.log.lck" beforeDir="false" />
@@ -98,7 +99,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/fatih/Desktop/bitti3 - Copy (4)",
+    "last_opened_file_path": "D:/216 pro/GameCatalogApp V1.0",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

@@ -25,6 +25,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -74,10 +75,29 @@ public class GameCatalogApp extends Application {
             try {
                 Files.createDirectories(imagesDir);
                 System.out.println("Created images folder at: " + imagesDir);
+
+                String[] defaultImages = { "test.jpg", "test2.jpg", "test3.jpg" };
+
+                for (String imageName : defaultImages) {
+                    try (InputStream in = getClass().getResourceAsStream("/images/" + imageName)) {
+                        if (in != null) {
+                            Path target = imagesDir.resolve(imageName);
+                            Files.copy(in, target, StandardCopyOption.REPLACE_EXISTING);
+                            System.out.println("Copied: " + imageName);
+                        } else {
+                            System.err.println("Resource not found: /images/" + imageName);
+                        }
+                    } catch (IOException e) {
+                        System.err.println("Failed to copy image: " + imageName);
+                        e.printStackTrace();
+                    }
+                }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+
 
 
         // root layout
@@ -100,7 +120,10 @@ public class GameCatalogApp extends Application {
         HBox.setHgrow(leftBox, Priority.NEVER);
         leftBox.setMaxWidth(250);
 
-        String imagePath = System.getProperty("user.home") + "/GameCatalogApp/images/test.jpg";
+        String imagePath = getClass().getResource("/images/test.jpg").toExternalForm();
+
+
+        //String imagePath = System.getProperty("user.home") + "/GameCatalogApp/images/test.jpg";
         ImageView logoImage = new ImageView(new Image(new File(imagePath).toURI().toString()));
 
         //ImageView logoImage = new ImageView(new Image(getClass().getResource("/img/test.jpg").toString()));
@@ -433,7 +456,6 @@ public class GameCatalogApp extends Application {
         dialog.showAndWait();
     }
 
-
     private void applyFilters(String query, String criterion) {
     String lowerQuery = query.toLowerCase();
     List<Game> filtered = allGames.stream()
@@ -696,11 +718,119 @@ public class GameCatalogApp extends Application {
 
 
 
+    /*
+    public List getallGames(){
+        //bugs sometimes with refresh
+        return allGames;
+    }
+*/
     public List<Game> getallGames() {
         return allGames;
     }
 
+    /*
+    private void exportSelectedGames() {
+        // Bug-free, don't touch
+        List<Game> selectedGames = displayedGameLabels.stream()
+                .filter(GameLabel::isSelected)
+                .map(GameLabel::getGame)
+                .collect(Collectors.toList());
 
+        if (selectedGames.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("No Selection");
+            alert.setHeaderText(null);
+            alert.setContentText("No games were selected for export.");
+            alert.showAndWait();
+            return;
+        }
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save Selected Games");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("JSON files", "*.json"));
+        File saveFile = fileChooser.showSaveDialog(null);
+
+        if (saveFile != null) {
+            Gson gson = new Gson();
+            try (FileWriter writer = new FileWriter(saveFile)) {
+                gson.toJson(selectedGames, writer);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Export Complete");
+                alert.setHeaderText(null);
+                alert.setContentText("Games exported successfully.");
+                alert.showAndWait();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    private void exportSelectedGames() {
+        // Early check for selections before creating any streams
+        boolean hasSelection = false;
+        for (GameLabel label : displayedGameLabels) {
+            if (label.isSelected()) {
+                hasSelection = true;
+                break;
+            }
+        }
+
+        if (!hasSelection) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("No Selection");
+            alert.setHeaderText(null);
+            alert.setContentText("No games were selected for export.");
+            alert.showAndWait();
+            return;
+        }
+
+        // Prepare file selection before gathering data
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save Selected Games");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("JSON files", "*.json"));
+        File saveFile = fileChooser.showSaveDialog(null);
+
+        if (saveFile != null) {
+            // Only collect the selected games if the user actually chose a file
+            List<Game> selectedGames = new ArrayList<>();
+            for (GameLabel label : displayedGameLabels) {
+                if (label.isSelected()) {
+                    selectedGames.add(label.getGame());
+                }
+            }
+
+            // Configure Gson for better performance
+            GsonBuilder gsonBuilder = new GsonBuilder();
+            // Avoid pretty-printing for better performance
+            Gson gson = gsonBuilder.create();
+
+            try {
+                // Use BufferedWriter for better I/O performance
+                try (BufferedWriter writer = new BufferedWriter(new FileWriter(saveFile))) {
+                    gson.toJson(selectedGames, writer);
+                }
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Export Complete");
+                alert.setHeaderText(null);
+                alert.setContentText("Games exported successfully.");
+                alert.showAndWait();
+            } catch (IOException e) {
+                e.printStackTrace();
+
+                // Show error to user
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Export Failed");
+                alert.setHeaderText(null);
+                alert.setContentText("Failed to export games: " + e.getMessage());
+                alert.showAndWait();
+            }
+        }
+    }
+
+    */
     public void ichangedsmthGithubPushit(){
         int nothing=0;
         return;

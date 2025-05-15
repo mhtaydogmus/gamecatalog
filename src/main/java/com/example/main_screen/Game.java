@@ -37,7 +37,7 @@ public class Game {
         this.tags = tags;
         this.image = image;
     }
-    // getters
+
     public String getDescription(List<String> tags) {
         StringBuilder tagsDescription = new StringBuilder();
 
@@ -51,6 +51,7 @@ public class Game {
         return tagsDescription.toString();
     }
 
+    // getter
     public String getImage() {
         return image;
     }
