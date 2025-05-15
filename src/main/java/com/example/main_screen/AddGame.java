@@ -81,12 +81,12 @@ public class AddGame {
     }
 
     public void start(Stage addGameStage) {
-        // Get screen dimensions to ensure the form fits correctly
+        // Get screen dimensions
         javafx.geometry.Rectangle2D screenBounds = javafx.stage.Screen.getPrimary().getVisualBounds();
         double screenHeight = screenBounds.getHeight();
         double screenWidth = screenBounds.getWidth();
 
-        // Calculate appropriate window size (max 90% of screen height, 80% of screen width)
+        // Appropriate window size calculation
         double windowHeight = Math.min(800, screenHeight * 0.9);
         double windowWidth = Math.min(650, screenWidth * 0.8);
 
@@ -95,7 +95,7 @@ public class AddGame {
         mainLayout.setStyle(BACKGROUND_STYLE);
         mainLayout.setPadding(new Insets(15));
 
-        // Center content wrapper - adjust spacing based on available height
+        // Center content wrapper adjust spacing based on available height
         double verticalSpacing = windowHeight < 700 ? 15 : 25;
         VBox formWrapper = new VBox(verticalSpacing);
         formWrapper.setAlignment(Pos.TOP_CENTER);
@@ -117,7 +117,7 @@ public class AddGame {
         Separator separator = new Separator();
         separator.setPadding(new Insets(5, 0, 10, 0));
 
-        // Form grid - adjust spacing based on screen size
+        // Form grid adjust spacing based on screen size
         GridPane formGrid = new GridPane();
         formGrid.setHgap(15);
         formGrid.setVgap(windowHeight < 700 ? 10 : 15);
@@ -161,7 +161,7 @@ public class AddGame {
         chooseImageBtn.setOnMouseEntered(e -> chooseImageBtn.setStyle(IMAGE_BUTTON_HOVER_STYLE));
         chooseImageBtn.setOnMouseExited(e -> chooseImageBtn.setStyle(IMAGE_BUTTON_STYLE));
 
-        // Image preview with placeholder border - smaller on small screens
+        // Image preview with placeholder border smaller on small screens
         double imageSize = windowHeight < 700 ? 80 : 100;
         double imageHeightFactor = windowHeight < 700 ? 120 : 150;
 
@@ -196,7 +196,7 @@ public class AddGame {
         formGrid.add(imageLabel, 0, labels.length);
         formGrid.add(imageRow, 1, labels.length);
 
-        // Submit button - adjust size based on screen
+        // Submit button adjust size based on screen
         Button submitBtn = new Button("Add Game");
         submitBtn.setStyle(BUTTON_STYLE);
         submitBtn.setPrefWidth(windowWidth < 600 ? 150 : 200);
@@ -281,14 +281,12 @@ public class AddGame {
 
                 mainApp.addNewGame(newGame);
                 mainApp.refreshCurrentView();
-
-                // Style the success alert
+                
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Game Added");
                 alert.setHeaderText(null);
                 alert.setContentText("New Game Added Successfully!");
-
-                // Apply custom styles to dialog
+                
                 DialogPane dialogPane = alert.getDialogPane();
                 dialogPane.setStyle("-fx-background-color: white; -fx-border-color: #4CAF50; -fx-border-width: 2px;");
 
