@@ -130,3 +130,47 @@ May 14, 2025 9:14:46 AM com.example.main_screen.GameLabel lambda$editScreen$3
 INFO: Copying to: C:\Users\fatih\GameCatalogApp\images\c7db644d185e49fc24849c6ba65d6de85c1e4ecf699d0fbfeba4a4d0f8fbb552_1.jpg
 May 14, 2025 9:14:46 AM com.example.main_screen.GameLabel lambda$editScreen$3
 INFO: Image copied successfully.
+May 14, 2025 9:44:30 AM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: 1
+May 14, 2025 9:44:30 AM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 9:48:30 AM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: q
+May 14, 2025 9:48:30 AM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 9:51:19 AM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: q
+May 14, 2025 9:51:19 AM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 9:51:27 AM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: q
+May 14, 2025 9:51:27 AM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 8:50:13 PM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: Stardew Valley
+May 14, 2025 8:50:13 PM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 8:50:32 PM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Selected File: C:\Users\fatih\Desktop\c7db644d185e49fc24849c6ba65d6de85c1e4ecf699d0fbfeba4a4d0f8fbb552_1.jpg
+May 14, 2025 8:50:32 PM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Target Directory: C:\Users\fatih\GameCatalogApp\images
+May 14, 2025 8:50:32 PM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Image copied successfully.
+May 14, 2025 8:50:32 PM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Copying to: C:\Users\fatih\GameCatalogApp\images\c7db644d185e49fc24849c6ba65d6de85c1e4ecf699d0fbfeba4a4d0f8fbb552_1.jpg
+May 14, 2025 8:50:32 PM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Image copied successfully.
+May 14, 2025 8:51:32 PM com.example.main_screen.GameLabel editScreen
+INFO: Opening edit screen for game: Crusader Kings III
+May 14, 2025 8:51:32 PM com.example.main_screen.GameLabel editScreen
+INFO: Edit screen shown successfully.
+May 14, 2025 8:51:48 PM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Selected File: C:\Users\fatih\Desktop\istockphoto-1017790284-612x612.jpg
+May 14, 2025 8:51:48 PM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Target Directory: C:\Users\fatih\GameCatalogApp\images
+May 14, 2025 8:51:48 PM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Image copied successfully.
+May 14, 2025 8:51:48 PM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Copying to: C:\Users\fatih\GameCatalogApp\images\istockphoto-1017790284-612x612.jpg
+May 14, 2025 8:51:48 PM com.example.main_screen.GameLabel lambda$editScreen$3
+INFO: Image copied successfully.

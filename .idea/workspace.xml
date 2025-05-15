@@ -9,9 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="600317aa-6d0c-4cc3-809d-577e1b579671" name="Changes" comment="edit dublicates and messing with img path i guess">
+    <list default="true" id="600317aa-6d0c-4cc3-809d-577e1b579671" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_catalog.log" beforeDir="false" afterPath="$PROJECT_DIR$/game_catalog.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_catalog.log.lck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/AddGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/AddGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameCatalogApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameCatalogApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/main_screen/GameLabel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,35 +88,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Gradle.bitti3 [:com.example.main_screen.GameCatalogApp.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.bitti3.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/fatih/Desktop/bitti3&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Gradle.bitti3 [:com.example.main_screen.GameCatalogApp.main()].executor": "Run",
+    "Gradle.bitti3.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/fatih/Desktop/bitti3 - Copy (4)",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;,
-      &quot;module&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory",
+      "module"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="GameCatalogApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.main_screen.GameCatalogApp" />
@@ -293,7 +297,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747201498882</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="it just works&#10;&#10;&#10;-todd howard">
+      <option name="closed" value="true" />
+      <created>1747204173785</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1747204173785</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,7 +335,8 @@
     <MESSAGE value="yeter" />
     <MESSAGE value="edit exede çalışmıyor benden bu kadar çok yoruldum 9 saattir çalışıyorum" />
     <MESSAGE value="edit dublicates and messing with img path i guess" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit dublicates and messing with img path i guess" />
+    <MESSAGE value="it just works&#10;&#10;&#10;-todd howard" />
+    <option name="LAST_COMMIT_MESSAGE" value="it just works&#10;&#10;&#10;-todd howard" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

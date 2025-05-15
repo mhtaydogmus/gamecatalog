@@ -309,6 +309,15 @@ public class GameLabel {
                 String platformsText = platformsField.getText().trim();
                 String translatorsText = translatorsField.getText().trim();
                 String steamIdText = steamIdField.getText().trim();
+
+                for (Game g : mainApp.getallGames()) {
+                    if (g != game && steamIdText.equals(g.getSteamid())) {
+                        errorLabel.setText("Steam ID already exists for another game.");
+                        return;
+                    }
+                }
+
+
                 String releaseYearText = releaseYearField.getText().trim();
                 String playtimeText = playtimeField.getText().trim();
                 String formatText = formatField.getText().trim();
@@ -320,7 +329,6 @@ public class GameLabel {
                     errorLabel.setText("All fields are required.");
                     return;
                 }
-
                 double rating;
                 try {
                     rating = Double.parseDouble(ratingText);
@@ -333,8 +341,12 @@ public class GameLabel {
                     return;
                 }
 
+                if (steamIdText.isEmpty()) {
+                    errorLabel.setText("Steam ID cannot be empty.");
+                    return;
+                }
+
                 try {
-                    // Fix for image validation with relative path
                     String absoluteImagePath = System.getProperty("user.home") + File.separator + "GameCatalogApp" + image;
                     File imageFile = new File(absoluteImagePath);
                     if (!imageFile.exists()) {
@@ -348,10 +360,11 @@ public class GameLabel {
                         return;
                     }
 
+
                     errorLabel.setText("");
 
                     game.setTitle(title);
-                    game.setImage(image); // still using the relative path like /images/abc.jpg
+                    game.setImage(image);
                     game.setGenre(genreText);
                     game.setDeveloper(developerText);
                     game.setPublisher(publisherText);
@@ -375,8 +388,8 @@ public class GameLabel {
                     ex.printStackTrace();
                     errorLabel.setText("Error updating game.");
                 }
-
             });
+
 
 
             cancelButton.setOnAction(e -> stage.close());

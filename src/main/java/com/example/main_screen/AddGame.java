@@ -102,7 +102,6 @@ public class AddGame {
             formGrid.add(field, 1, i);
         }
 
-        // Image selection
         Label imageLabel = new Label("Image:");
         imageLabel.setStyle("-fx-font-weight: bold;");
         Button chooseImageBtn = new Button("Choose Image");
@@ -129,12 +128,10 @@ public class AddGame {
         formGrid.add(imageLabel, 0, labels.length);
         formGrid.add(imageRow, 1, labels.length);
 
-        // Submit button
         Button submitBtn = new Button("Add Game");
         submitBtn.setStyle("-fx-background-color: #4CAF50; -fx-text-fill: white;");
         submitBtn.setOnAction(e -> {
             try {
-                // First, validate that all required fields have values
                 for (int i = 0; i < fields.length; i++) {
                     if (fields[i].getText().trim().isEmpty()) {
                         Alert alert = new Alert(Alert.AlertType.WARNING,
@@ -149,7 +146,6 @@ public class AddGame {
                 String developer = fields[2].getText().trim();
                 String publisher = fields[3].getText().trim();
 
-                // For list fields, handle empty input
                 String platformsText = fields[4].getText().trim();
                 List<String> platforms = platformsText.isEmpty() ?
                         new ArrayList<>() : Arrays.asList(platformsText.split(","));
@@ -167,13 +163,19 @@ public class AddGame {
                 List<String> languages = languageText.isEmpty() ?
                         new ArrayList<>() : Arrays.asList(languageText.split(","));
 
-                // Validate the rating is a valid number
                 double rating;
                 try {
                     rating = Double.parseDouble(fields[11].getText().trim());
+
+                    if (rating < 0 || rating > 10) {
+                        Alert alert = new Alert(Alert.AlertType.WARNING,
+                                "Rating must be between 0 and 10.");
+                        alert.showAndWait();
+                        return;
+                    }
                 } catch (NumberFormatException ex) {
                     Alert alert = new Alert(Alert.AlertType.WARNING,
-                            "Rating must be a valid number (e.g., 8.5)");
+                            "Rating must be a valid number (e.g., 8.5).");
                     alert.showAndWait();
                     return;
                 }
@@ -188,10 +190,9 @@ public class AddGame {
                     return;
                 }
 
-                // Copy the image to the img folder and get the relative path
                 String imgPath = copyImageToImgFolder(selectedImagePath);
                 if (imgPath == null) {
-                    return; // Error happened in copyImageToImgFolder
+                    return;
                 }
 
                 System.out.println("Creating new game with image path: " + imgPath);
@@ -217,6 +218,7 @@ public class AddGame {
                 alert.showAndWait();
             }
         });
+
 
 
         VBox wrapper = new VBox(20);
