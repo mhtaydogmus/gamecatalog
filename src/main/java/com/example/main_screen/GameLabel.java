@@ -14,7 +14,9 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -68,17 +70,24 @@ public class GameLabel {
         try {
             Path fullPath = Paths.get(System.getProperty("user.home"), "GameCatalogApp", game.getImage());
             Image image = new Image(fullPath.toUri().toString(), 150, 225, true, true);
+            if (image.isError()) throw new Exception();
             gameImageView = new ImageView(image);
         } catch (Exception e) {
-
-            gameImageView = new ImageView();
-            System.err.println("Failed to load image for game: " + game.getTitle());
+            InputStream fallbackStream = getClass().getResourceAsStream("/images/notfound2.png");
+            if (fallbackStream != null) {
+                Image fallbackImage = new Image(fallbackStream, 150, 225, true, true);
+                gameImageView = new ImageView(fallbackImage);
+            } else {
+                System.err.println("Could not load fallback image from resources: /images/notfound2.png");
+                gameImageView = new ImageView();
+            }
+            System.err.println("Failed to load game image for: " + game.getTitle());
         }
+
 
         gameImageView.setFitWidth(150);
         gameImageView.setFitHeight(225);
         gameImageView.setId("game_image");
-
 
         // btn for redirect
         Button button = new Button();
@@ -90,12 +99,11 @@ public class GameLabel {
         // game title
         Label gameTitle = new Label(game.getTitle());
         gameTitle.getStyleClass().add("game_item_label");
-
         gameTitle.setMaxWidth(175);
         gameTitle.setWrapText(true);
         gameTitle.setPadding(new Insets(0, 0, 0, 10));
 
-        //description
+        // description
         String tagsDescription = game.getDescription(game.getTags());
         Label gameDescription = new Label(tagsDescription);
         gameDescription.getStyleClass().add("game_description");
@@ -104,13 +112,12 @@ public class GameLabel {
         gameDescription.setMaxHeight(60);
         gameDescription.setPadding(new Insets(0, 0, 0, 10));
 
-
-
         // add to vbox
-        itemBox.getChildren().addAll(button, gameTitle, gameDescription,selectBox);
+        itemBox.getChildren().addAll(button, gameTitle, gameDescription, selectBox);
 
         return itemBox;
     }
+
     public boolean isSelected() {
         return selectBox.isSelected();
     }
@@ -123,18 +130,25 @@ public class GameLabel {
         Label titleLabel = new Label("Title: " + game.getTitle());
         titleLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 18px;");
         String imgSource = game.getFullImagePath();
-        Image cover = null;
+        Image cover;
 
-        if (imgSource.startsWith("file:") || imgSource.startsWith("http")) {
-            cover = new Image(imgSource, 200, 300, true, true);
-        } else {
-            File imageFile = new File(System.getProperty("user.home"), "GameCatalogApp/images/" + imgSource);
-
-            if (imageFile.exists()) {
-                cover = new Image(imageFile.toURI().toString(), 200, 300, true, true);
+        try {
+            if (imgSource.startsWith("file:") || imgSource.startsWith("http")) {
+                cover = new Image(imgSource, 200, 300, true, true);
+                if (cover.isError()) throw new IOException("Failed to load image from URL: " + imgSource);
             } else {
-                logger.severe("Image file not found: " + imageFile.getAbsolutePath());
+                File imageFile = new File(System.getProperty("user.home"), "GameCatalogApp/images/" + imgSource);
+                if (imageFile.exists()) {
+                    cover = new Image(imageFile.toURI().toString(), 200, 300, true, true);
+                    if (cover.isError()) throw new IOException("Image exists but failed to load: " + imageFile.getAbsolutePath());
+                } else {
+                    throw new FileNotFoundException("Image file not found: " + imageFile.getAbsolutePath());
+                }
             }
+        } catch (Exception e) {
+            logger.severe("Image load failed, using fallback: " + e.getMessage());
+            File fallback = new File(System.getProperty("user.home"), "GameCatalogApp/images/notfound2.png");
+            cover = new Image(fallback.toURI().toString(), 200, 300, true, true);
         }
 
 

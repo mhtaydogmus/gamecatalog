@@ -14,28 +14,23 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 
-// External variables
 ext {
     junitVersion = '5.9.2'
 }
 
-// Java version toolchain
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
-// Java version
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
-// Encoding settings
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-// Application settings
 application {
     mainModule = 'com.example.main_screen'
     mainClass = 'com.example.main_screen.GameCatalogApp'
@@ -48,7 +43,6 @@ jar {
     }
 }
 
-// JavaFX settings
 javafx {
     version = '17'
     modules = ['javafx.controls', 'javafx.fxml']
@@ -69,13 +63,10 @@ dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
 }
-
-// Use JUnit 5 platform for tests
 test {
     useJUnitPlatform()
 }
 
-// JLink plugin settings
 jlink {
     options = [
             '--strip-debug', '--compress', '2',
@@ -86,29 +77,22 @@ jlink {
         name = 'app'
     }
 
-    // Force include specific resources in the final runtime image
     addOptions('--add-modules', 'java.base,java.desktop,javafx.controls,javafx.fxml,jdk.zipfs')
     addOptions('--bind-services')
 
-    // MacOS-specific settings
     if (org.gradle.internal.os.OperatingSystem.current().isMacOsX()) {
         addOptions('--mac-sign')
     }
 
-    // Merge Jackson libraries to prevent module conflicts
     forceMerge('jackson')
-
-    // JPackage settings for installer creation
     jpackage {
         imageName = "GameCatalog"
         installerName = "GameCatalog"
-        appVersion = "1.0.0"
-        vendor = "YourCompany"
+        appVersion = "1.1.0"
+        vendor = "CE216"
 
-        // Set installer type for all platforms
         installerType = org.gradle.internal.os.OperatingSystem.current().isWindows() ? "exe" : "pkg"
 
-        // Windows-specific installer options
         if (org.gradle.internal.os.OperatingSystem.current().isWindows()) {
             installerOptions = [
                     '--win-shortcut',
@@ -118,13 +102,8 @@ jlink {
             ]
         }
 
-        // Resource directory
         resourceDir = file("$buildDir/resources/main")
-
-        // Output directory
         imageOutputDir = file("$buildDir/jpackage")
-
-        // General options
         options = ['--verbose']
     }
 
@@ -134,24 +113,21 @@ jlink {
 
 }
 
-// A task to create a Windows package using jpackage
 task packageWindows(type: Exec) {
     dependsOn('jlink')
 
-    // Only run this task on Windows
     onlyIf { org.gradle.internal.os.OperatingSystem.current().isWindows() }
 
     workingDir = projectDir
 
     def jlinkOutput = file("$buildDir/image")
 
-    // Command to execute
     commandLine = [
             'jpackage',
             '--type', 'app-image',
             '--name', 'GameCatalog',
-            '--app-version', '1.0.0',
-            '--vendor', 'YourCompany',
+            '--app-version', '1.1.0',
+            '--vendor', 'CE216',
             '--module', "${application.mainModule}/${application.mainClass}",
             '--runtime-image', jlinkOutput,
             '--dest', "$buildDir/jpackage",
@@ -162,7 +138,6 @@ task packageWindows(type: Exec) {
     ]
 }
 
-// Settings for running the app
 run {
     doFirst {
         jvmArgs = [

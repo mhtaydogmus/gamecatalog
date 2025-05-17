@@ -69,8 +69,6 @@ public class GameCatalogApp extends Application {
         GameLabel.setupLogger();
 
         Path appDir = getAppDataDirectory();
-
-        String[] defaultImages = {"test.jpg"};
         Path imagesDir = appDir.resolve("images");
 
         if (!Files.exists(imagesDir)) {
@@ -82,31 +80,6 @@ public class GameCatalogApp extends Application {
                 e.printStackTrace();
             }
         }
-
-        for (String imageName : defaultImages) {
-            try (InputStream in = getClass().getResourceAsStream("/images/" + imageName)) {
-                if (in == null) {
-                    System.err.println("Resource not found in JAR: /images/" + imageName);
-                    continue;
-                }
-
-                Path target = imagesDir.resolve(imageName);
-
-                if (!Files.exists(target)) {
-                    Files.copy(in, target);
-                    System.out.println("Copied default image: " + target);
-                } else {
-                    System.out.println("Image already exists, skipped: " + target);
-                }
-
-            } catch (IOException e) {
-                System.err.println("Failed to copy image: " + imageName);
-                e.printStackTrace();
-            }
-        }
-
-
-
 
         // root layout
         VBox root = new VBox(20);
@@ -730,8 +703,6 @@ public class GameCatalogApp extends Application {
         refreshCurrentView();
     }
 
-
-
     /*
     public List getallGames(){
         //bugs sometimes with refresh
@@ -742,109 +713,6 @@ public class GameCatalogApp extends Application {
         return allGames;
     }
 
-    /*
-    private void exportSelectedGames() {
-        // Bug-free, don't touch
-        List<Game> selectedGames = displayedGameLabels.stream()
-                .filter(GameLabel::isSelected)
-                .map(GameLabel::getGame)
-                .collect(Collectors.toList());
-
-        if (selectedGames.isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("No Selection");
-            alert.setHeaderText(null);
-            alert.setContentText("No games were selected for export.");
-            alert.showAndWait();
-            return;
-        }
-
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Save Selected Games");
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("JSON files", "*.json"));
-        File saveFile = fileChooser.showSaveDialog(null);
-
-        if (saveFile != null) {
-            Gson gson = new Gson();
-            try (FileWriter writer = new FileWriter(saveFile)) {
-                gson.toJson(selectedGames, writer);
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Export Complete");
-                alert.setHeaderText(null);
-                alert.setContentText("Games exported successfully.");
-                alert.showAndWait();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-
-    private void exportSelectedGames() {
-        // Early check for selections before creating any streams
-        boolean hasSelection = false;
-        for (GameLabel label : displayedGameLabels) {
-            if (label.isSelected()) {
-                hasSelection = true;
-                break;
-            }
-        }
-
-        if (!hasSelection) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("No Selection");
-            alert.setHeaderText(null);
-            alert.setContentText("No games were selected for export.");
-            alert.showAndWait();
-            return;
-        }
-
-        // Prepare file selection before gathering data
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Save Selected Games");
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("JSON files", "*.json"));
-        File saveFile = fileChooser.showSaveDialog(null);
-
-        if (saveFile != null) {
-            // Only collect the selected games if the user actually chose a file
-            List<Game> selectedGames = new ArrayList<>();
-            for (GameLabel label : displayedGameLabels) {
-                if (label.isSelected()) {
-                    selectedGames.add(label.getGame());
-                }
-            }
-
-            // Configure Gson for better performance
-            GsonBuilder gsonBuilder = new GsonBuilder();
-            // Avoid pretty-printing for better performance
-            Gson gson = gsonBuilder.create();
-
-            try {
-                // Use BufferedWriter for better I/O performance
-                try (BufferedWriter writer = new BufferedWriter(new FileWriter(saveFile))) {
-                    gson.toJson(selectedGames, writer);
-                }
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Export Complete");
-                alert.setHeaderText(null);
-                alert.setContentText("Games exported successfully.");
-                alert.showAndWait();
-            } catch (IOException e) {
-                e.printStackTrace();
-
-                // Show error to user
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Export Failed");
-                alert.setHeaderText(null);
-                alert.setContentText("Failed to export games: " + e.getMessage());
-                alert.showAndWait();
-            }
-        }
-    }
-
-    */
     public void ichangedsmthGithubPushit(){
         int nothing=0;
         return;

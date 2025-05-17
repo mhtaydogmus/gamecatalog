@@ -192,3 +192,9 @@ May 15, 2025 5:54:55 PM com.example.main_screen.GameLabel lambda$editScreen$3
 INFO: Copying to: C:\Users\fatih\GameCatalogApp\images\c7db644d185e49fc24849c6ba65d6de85c1e4ecf699d0fbfeba4a4d0f8fbb552_1.jpg
 May 15, 2025 5:54:55 PM com.example.main_screen.GameLabel lambda$editScreen$3
 INFO: Image copied successfully.
+May 17, 2025 10:15:43 AM com.example.main_screen.GameLabel openGamePage
+SEVERE: Image load failed, using fallback: Failed to load image from URL: file:C:\Users\fatih/GameCatalogApp/images/istockphoto-1017790284-612x612.jpg
+May 17, 2025 10:17:28 AM com.example.main_screen.GameLabel openGamePage
+SEVERE: Image load failed, using fallback: Failed to load image from URL: file:C:\Users\fatih/GameCatalogApp/images/istockphoto-1017790284-612x612.jpg
+May 17, 2025 10:38:46 AM com.example.main_screen.GameLabel openGamePage
+SEVERE: Image load failed, using fallback: Failed to load image from URL: file:C:\Users\fatih/GameCatalogApp/images/istockphoto-1017790284-612x612.jpg
